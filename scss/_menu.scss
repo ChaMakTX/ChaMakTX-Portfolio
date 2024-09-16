@@ -1,0 +1,40 @@
+//menu button
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: #fff;
+        @include easeOut;
+    }
+
+    //rotation of the button to x when clicked
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            //line 1 - rotates on click to form one part of x
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+             //line 2 - disappers on click
+             &:nth-child(2) {
+                opacity: 0;
+            }
+
+             //line 3 - rotates on click to form another part of x hence compliting it
+             &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
